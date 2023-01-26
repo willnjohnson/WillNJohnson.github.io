@@ -1,11 +1,199 @@
 <!DOCTYPE html>
-
 <html>
   <head>
-    <title>Index</title>
+    <title>William's Display Webpage</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+    /* Styles for navbar and link */
+    .navbar {
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #500;
+        z-index: 1;
+    }
+
+    .navbar a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        padding: 10px 20px;
+        color: white;
+    }
+
+    .navbar a i {
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+
+    /* Styles for hiding the navbar on scroll (down page) */
+    .hide-navbar {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.5s linear;
+    }
+
+    /* Styles for background change on hovering of navbar links */
+    .navbar a:hover {
+        background-color: #300;
+        color: white;
+    }
+
+    /* Styles for container column layout */
+    .container {
+        display: flex;
+        padding-top: 50px;
+    }
+
+    .left-col {
+        width: 20.00%;
+        height: 100vh;
+        top: 0;
+        padding-top: 50px;
+        border-right: 1px solid lightgray;
+        position: fixed;
+        overflow: auto;
+    }
+
+    .right-col {
+        top: 0;
+        padding-top: 50px;
+        padding-left: 25px;
+        position: absolute;
+        left: 20.00%;
+    }
+    
+    .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: #500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        cursor: pointer;
+        opacity: 0;
+    }
+    
+    .back-to-top i {
+        color: white;
+        font-size: 20px;
+
+    }
+    
+    .fade-in {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+    }
+    
+    .fade-out {
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+    
+</style>
+
   </head>
-  
   <body>
-    <p>More will be added later in the future</p>
+    <div class="back-to-top">
+      <i class="material-icons">arrow_upward</i>
+    </div>
+    <div class="navbar">
+      <a href=https://github.com/WillNJohnson><i class="material-icons">house</i>Github</a>
+      <a href="#about"><i class="material-icons">person</i>About</a>
+      <a href="#academics"><i class="material-icons">school</i>Academics</a>
+      <a href="#experience"><i class="material-icons">work</i>Experience</a>
+    </div>
+    <div class="container">
+      <div class="left-col">
+        <div class="profile-picture">
+          <!-- Add profile picture here -->
+        </div>
+        <div class="contact-info">
+          <p>Phone: 111-111-1111</p>
+          <p>Email: dummy@test.com</p>
+        </div>
+      </div>
+      <div class="right-col">
+        <div id="about">
+          <h1>About</h1>
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
+          <p>Hello</p>
+        </div>
+        <div id="academics">
+          <h1>Academics</h1>
+        </div>
+        <div id="experience">
+          <h1>Experience</h1>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Hide navbar when scrolling down, but display when scrolling up
+      let scroll_pos_last = window.pageYOffset;
+      let scroll_start = document.querySelector(".back-to-top");
+      
+      // Apply smooth scroll to top of page
+      scroll_start.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      
+      // Scroll behavior on navbar and back-to-top
+      window.onscroll = () => {
+        var scroll_pos_current = window.pageYOffset;
+        if (scroll_pos_last > scroll_pos_current) {
+          document.querySelector(".navbar").style.visibility = "visible";
+          document.querySelector(".back-to-top").style.visibility = "hidden";
+          document.querySelector(".navbar").style.opacity = "1";
+          document.querySelector(".back-to-top").style.opacity = "0";
+          
+          scroll_start.classList.remove("fade-out");
+          scroll_start.classList.add("fade-in");
+        } else {
+          document.querySelector(".navbar").style.visibility = "hidden";
+          document.querySelector(".back-to-top").style.visibility = "visible";
+          document.querySelector(".navbar").style.opacity = "0";
+          document.querySelector(".back-to-top").style.opacity = "1";
+          
+          scroll_start.classList.remove("fade-in");
+          scroll_start.classList.add("fade-out");
+        }
+        scroll_pos_last = scroll_pos_current;
+      }
+    </script>
   </body>
 </html>
