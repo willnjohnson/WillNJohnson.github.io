@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>William's Display Webpage</title>
+    <title>William N. Johnson's Portfolio
+    </title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <style>
-    /* Styles for navbar and link */
-    .navbar {
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial';
+      }
+      /* Styles for information (left-column) */
+      .info-footer {
+        color: #aaa;
+        position: fixed;
+        bottom: 0;
+        font-size: 12px;
+      }
+      .info i {
+        display: inline-block;
+        padding-right: 5px;
+        vertical-align: middle;
+      }
+      .profile-picture img {
+        margin-top: 10px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.25);
+        max-width: 80.00%;
+      }
+      /* Styles for navbar and link */
+      .navbar {
         position: fixed;
         display: flex;
         flex-direction: row;
@@ -13,61 +40,101 @@
         left: 0;
         width: 100%;
         background-color: #500;
+        height: 50px;
         z-index: 1;
-    }
-
-    .navbar a {
+      }
+      .navbar a, .navbar a:visited {
         display: flex;
         align-items: center;
         text-decoration: none;
         padding: 10px 20px;
         color: white;
-    }
-
-    .navbar a i {
+      }
+      .navbar a i {
         display: inline-block;
         margin-right: 10px;
         vertical-align: middle;
-    }
-
-    /* Styles for hiding the navbar on scroll (down page) */
-    .hide-navbar {
+      }
+      i.info {
+        font-size: 20px;
+      }
+      i.lang {
+        font-size: 30px;
+        color: #08c;
+        text-shadow: 3px 3px #ccc;
+      }
+      /* Styles for hiding the navbar on scroll (down page) */
+      .hide-navbar {
         visibility: hidden;
         opacity: 0;
         transition: visibility 0s, opacity 0.5s linear;
-    }
-
-    /* Styles for background change on hovering of navbar links */
-    .navbar a:hover {
+      }
+      /* Styles for background change on hovering of navbar links */
+      .navbar a:hover {
         background-color: #300;
         color: white;
-    }
-
-    /* Styles for container column layout */
-    .container {
+      }
+      /* Styles for container column layout */
+      .container {
         display: flex;
         padding-top: 50px;
-    }
-
-    .left-col {
+      }
+      a, a:hover {
+        color: #c00;
+      }
+      a:visited {
+        color: #600;
+      }
+      .left-col {
+        background-color: #fafafa;
         width: 20.00%;
         height: 100vh;
         top: 0;
-        padding-top: 50px;
         border-right: 1px solid lightgray;
         position: fixed;
-        overflow: auto;
-    }
-
-    .right-col {
+        overflow: hidden;
+      }
+      .left-col-box {
+        background-color: #600;
+        flex-direction: row;
+        top: 0;
+        left: 0;
+        max-width: 100%;
+        height: 50px;
+      }
+      .left-col-box h4 {
+        text-transform: uppercase;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        line-height: 3;
+      }
+      .left-col-content {
+        margin-left: 10px;
+      }
+      .right-col {
         top: 0;
         padding-top: 50px;
         padding-left: 25px;
+        padding-right: 25px;
         position: absolute;
         left: 20.00%;
-    }
-    
-    .back-to-top {
+      }
+      .paragraph-and-image img {
+        max-width: 40%;
+        float: right;
+        border-radius: 10px;
+        box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.25);
+      }
+      .unselectable {
+        -moz-user-select: -moz-none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+      }
+      .back-to-top {
         position: fixed;
         bottom: 20px;
         right: 20px;
@@ -81,119 +148,710 @@
         z-index: 1;
         cursor: pointer;
         opacity: 0;
-    }
-    
-    .back-to-top i {
+      }
+      .back-to-top i {
         color: white;
         font-size: 20px;
-
-    }
-    
-    .fade-in {
+      }
+      .fade-in {
         visibility: visible;
         opacity: 1;
         transition: opacity 0.5s ease-in-out;
-    }
-    
-    .fade-out {
+      }
+      .fade-out {
         visibility: hidden;
         opacity: 0;
         transition: opacity 0.5s ease-in-out;
-    }
-    
-</style>
-
+      }
+      /* Styles for table */
+      table {
+        table-layout: fixed;
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        border: 1px solid #ddd;
+      }
+      th, td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+      }
+      th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
     <div class="back-to-top">
-      <i class="material-icons">arrow_upward</i>
+      <i class="material-icons">arrow_upward
+      </i>
     </div>
     <div class="navbar">
-      <a href=https://github.com/WillNJohnson><i class="material-icons">house</i>Github</a>
-      <a href="#about"><i class="material-icons">person</i>About</a>
-      <a href="#academics"><i class="material-icons">school</i>Academics</a>
-      <a href="#experience"><i class="material-icons">work</i>Experience</a>
+      <a href=https://github.com/WillNJohnson>
+        <i class="material-icons">house
+        </i>Github
+      </a>
+      <a href="#about">
+        <i class="material-icons">person
+        </i>About
+      </a>
+      <a href="#programming-languages">
+        <i class="material-icons">code
+        </i>Programming Languages & Tools
+      </a>
+      <a href="#academics">
+        <i class="material-icons">school
+        </i>Academics
+      </a>
+      <a href="#experience">
+        <i class="material-icons">work
+        </i>Experience
+      </a>
+      <a href="#showcase">
+        <i class="material-icons">auto_awesome
+        </i>Showcase
+      </a>
     </div>
     <div class="container">
       <div class="left-col">
-        <div class="profile-picture">
-          <!-- Add profile picture here -->
+        <div class="left-col-box">
+          <h4>William N. Johnson
+          </h4>
         </div>
-        <div class="contact-info">
-          <p>Phone: 111-111-1111</p>
-          <p>Email: dummy@test.com</p>
+        <div class="left-col-content">
+          <div class="profile-picture">
+            <img src="https://i.imgur.com/u6oSumt.jpg" alt="William">
+          </div>
+          <div class="profile-info">
+            <p class="info">
+              <i class="info material-icons">mail
+              </i>
+              <a href="mailto:wnjohnson1997@gmail.com">wnjohnson1997@gmail.com
+              </a>
+            </p>
+            <p class="info">
+              <i class="info devicon-linkedin-plain">
+              </i>
+              <a href="https://www.linkedin.com/in/william-johnson-a24320157/">LinkedIn Profile
+              </a>
+            </p>
+            <p class="info">
+              <i class="info material-icons">description
+              </i>
+              <a href="https://drive.google.com/file/d/1yC5HU7J8NrvA9AWOmMVHmeW45KsDUWSO/view?usp=sharing">Resume
+              </a>
+            </p>
+            <p class="info">
+              <i class="info material-icons">location_on
+              </i>Knoxville, TN, USA
+            </p>
+            <br>
+            <p class="info info-footer unselectable">Updated: January 27th, 2022
+            </p>
+          </div>
         </div>
       </div>
       <div class="right-col">
         <div id="about">
-          <h1>About</h1>
-          <p>Hello</p>
-          <p>Hello</p>
-          <p>Hello</p>
-          <p>Hello</p>
-          <p>Hello</p>
-          <p>Hello</p>
-          <p>Hello</p>
-          <p>Hello</p>
-          <p>Hello</p>
-          <p>Hello</p>
-          <p>Hello</p>
-          <p>Hello</p>
-          <p>Hello</p>
-          <p>Hello</p>
-          <p>Hello</p>
-          <p>Hello</p>
-          <p>Hello</p>
-          <p>Hello</p>
-          <p>Hello</p>
-          <p>Hello</p>
-          <p>Hello</p>
-          <p>Hello</p>
-          <p>Hello</p>
-          <p>Hello</p>
-          <p>Hello</p>
-          <p>Hello</p>
+          <h1>About
+          </h1>
+          <h3>Introduction
+          </h3>
+          <p>Welcome to my portfolio!
+          </p>
+          <p>My name is William Johnson and I am currently an undergraduate student pursuing a bachelor's degree (B.S.) in Computer Science and a minor in Cybersecurity. I am excited to be graduating this Spring 2023 and looking forward to starting my career in the tech industry.
+          </p>
+          <h3>Hobbies
+          </h3>
+          <p>When I am not busy, I enjoy leisurely spending time on a variety of hobbies such as the following:
+          </p>
+          <p>
+            <strong>
+              <em>Arts and crafts: 
+              </em>
+            </strong>I have a passion for arts and crafts, and enjoy painting art on Christmas for friends and family, and sometimes create artwork in Adobe Photoshop. I actually grew up learning how to use Adobe Fireworks for composing illustrations, which was the first piece of software that opened me up to designing websites (since 2014-2015).
+          </p>
+          <p>
+            <strong>
+              <em>Games: 
+              </em>
+            </strong> Every so often, I enjoy playing video games as a pastime, especially on holiday. On console, I particularly enjoy the Pokemon franchise and some platformers such as Mario. On PC, I enjoy playing Minecraft with friends to collaborate on building things. When my family members are home, I enjoy playing tabletop and card games such as EXIT: The Game, UNO, and Forbidden Desert.
+          </p>
+          <p>
+            <strong>
+              <em>Music: 
+              </em>
+            </strong> Additionally, I am a big fan of electronic music from the late 90s and early 2000s. Occasionally I'll listen to some 80s music, which I find helps me to stay focused and relaxed. I also enjoy some classic rock music.
+          </p>
+          <p>
+            <strong>
+              <em>Videos: 
+              </em>
+            </strong> At times, I like to watch videos on YouTube such as cooking, programming, cybersecurity news, programming memes, and interesting science and tech videos.
+          </p>
+          <h3>People's skills
+          </h3>
+          <ul>
+            <li>Strong leadership: possess structure in managing tasks (e.g. Github issues), able to cooperate and collaborate with team members, and advise assistance when necessary
+            </li>
+            <li>Communication: manage tasks on Slack / Discord / Github Issues and able to listen and provide feedback in a timely manner
+            </li>
+            <li>Organization: employ project management tools such as Jira and Gantt charts for projects
+            </li>
+            <li>Charisma: devote steps toward the success of the team and the project
+            </li>
+          </ul>
+          <h3>Aspiration
+          </h3>
+          <p>I look forward to contributing my computer science skills to the tech industry and establishing more hands-on experience. I have always been interested in web development and software engineering, and have enjoyed learning new topics along the way. I find cybersecurity to be the "missing link" that bridges the rapid pace of online presence of software, and the Internet.
+          </p>
+          <p>I hope to start my career in a related field (web, software, cybersecurity), and am actively seeking job opportunities starting Summer 2023. In case I don't get a job, I am also taking graduate courses to open up the possibility of pursuing a master's degree (via BS/MS).
+          </p>
         </div>
+        <hr />
+        <div id="programming-languages">
+          <h1>Programming Languages & Tools
+          </h1>
+          <div class="unselectable">
+            <h3>Proficient
+            </h3>
+            <i class="lang devicon-python-plain colored">
+            </i>
+            <i class="lang devicon-cplusplus-plain colored">
+            </i>
+            <i class="lang devicon-c-plain colored">
+            </i>
+            <i class="lang devicon-html5-plain colored">
+            </i>
+            <i class="lang devicon-javascript-plain colored">
+            </i>
+            <i class="lang devicon-css3-plain colored">
+            </i>
+            <h3>Moderate
+            </h3>
+            <i class="lang devicon-react-original colored">
+            </i>
+            <i class="lang devicon-nodejs-plain colored">
+            </i>
+            <i class="lang devicon-typescript-plain colored">
+            </i>
+            <i class="lang devicon-redux-original colored">
+            </i>
+            <i class="lang devicon-graphql-plain colored">
+            </i>
+            <i class="lang devicon-express-original colored">
+            </i>
+            <i class="lang devicon-mongodb-plain colored">
+            </i>
+            <i class="lang devicon-sqlite-plain colored">
+            </i>
+            <i class="lang devicon-qt-original colored">
+            </i>
+            <i class="lang devicon-java-plain colored">
+            </i>
+            <i class="lang devicon-csharp-plain colored">
+            </i>
+            <i class="lang devicon-matlab-plain colored">
+            </i>
+            <i class="lang devicon-git-plain colored">
+            </i>
+            <h3>Novice
+            </h3>
+            <i class="lang devicon-solidity-plain colored">
+            </i>
+            <i class="lang devicon-azure-plain colored">
+            </i>
+            <i class="lang devicon-redis-plain colored">
+            </i>
+            <i class="lang devicon-microsoftsqlserver-plain colored">
+            </i>
+            <i class="lang devicon-docker-plain colored">
+            </i>
+          </div>
+        </div>
+        <hr />
         <div id="academics">
-          <h1>Academics</h1>
+          <h1>Academics
+          </h1>
+          <h3>University of Tennessee
+          </h3>
+          <h4>
+            <em>(Summa Cum Laude, B.S. Computer Science with Cybersecurity)
+            </em>
+          </h4>
+          <table>
+            <tr>
+              <th colspan="3">Spring 2023
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <strong>Course Number
+                </strong>
+              </td>
+              <td>
+                <strong>Course Name
+                </strong>
+              </td>
+              <td>
+                <strong>Grade
+                </strong>
+              </td>
+            </tr>
+            <tr>
+              <td>COSC 566
+              </td>
+              <td>Software Security
+              </td>
+              <td>TBD
+              </td>
+            </tr>
+            <tr>
+              <td>COSC 594
+              </td>
+              <td>Network Security
+              </td>
+              <td>TBD
+              </td>
+            </tr>
+            <tr>
+              <td>COSC 402
+              </td>
+              <td>Senior Design Practicum
+              </td>
+              <td>TBD
+              </td>
+            </tr>
+          </table>
+          <br/>
+          <table>
+            <tr>
+              <th colspan="3">Fall 2022
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <strong>Course Number
+                </strong>
+              </td>
+              <td>
+                <strong>Course Name
+                </strong>
+              </td>
+              <td>
+                <strong>Grade
+                </strong>
+              </td>
+            </tr>
+            <tr>
+              <td>ECE 469
+              </td>
+              <td>Mobile and Embedded Systems Security
+              </td>
+              <td>A
+              </td>
+            </tr>
+            <tr>
+              <td>COSC 483
+              </td>
+              <td>Applied Cryptography
+              </td>
+              <td>A
+              </td>
+            </tr>
+            <tr>
+              <td>COSC 469
+              </td>
+              <td>Human Factors in Cybersecurity
+              </td>
+              <td>A
+              </td>
+            </tr>
+            <tr>
+              <td>COSC 462
+              </td>
+              <td>Parallel Programming
+              </td>
+              <td>A
+              </td>
+            </tr>
+            <tr>
+              <td>COSC 401
+              </td>
+              <td>Senior Design Theory
+              </td>
+              <td>A
+              </td>
+            </tr>
+          </table>
+          <br/>
+          <table>
+            <tr>
+              <th colspan="3">Spring 2022
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <strong>Course Number
+                </strong>
+              </td>
+              <td>
+                <strong>Course Name
+                </strong>
+              </td>
+              <td>
+                <strong>Grade
+                </strong>
+              </td>
+            </tr>
+            <tr>
+              <td>COSC 365
+              </td>
+              <td>Programming Languages and Systems
+              </td>
+              <td>A
+              </td>
+            </tr>
+            <tr>
+              <td>COSC 361
+              </td>
+              <td>Operating Systems
+              </td>
+              <td>A
+              </td>
+            </tr>
+            <tr>
+              <td>ECE 462
+              </td>
+              <td>Cyber-Physical Systems Security
+              </td>
+              <td>A
+              </td>
+            </tr>
+            <tr>
+              <td>COSC 366
+              </td>
+              <td>Introduction to Cybersecurity
+              </td>
+              <td>A
+              </td>
+            </tr>
+            <tr>
+              <td>COSC 395
+              </td>
+              <td>Junior Seminar
+              </td>
+              <td>A
+              </td>
+            </tr>
+          </table>
+          <br/>
+          <table>
+            <tr>
+              <th colspan="3">Fall 2021
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <strong>Course Number
+                </strong>
+              </td>
+              <td>
+                <strong>Course Name
+                </strong>
+              </td>
+              <td>
+                <strong>Grade
+                </strong>
+              </td>
+            </tr>
+            <tr>
+              <td>ENGL 360
+              </td>
+              <td>Technical and Professional Writing
+              </td>
+              <td>A
+              </td>
+            </tr>
+            <tr>
+              <td>COSC 312
+              </td>
+              <td>Algorithm Analysis and Automata
+              </td>
+              <td>A
+              </td>
+            </tr>
+            <tr>
+              <td>COSC 340
+              </td>
+              <td>Software Engineering
+              </td>
+              <td>A
+              </td>
+            </tr>
+            <tr>
+              <td>COSC 445
+              </td>
+              <td>Fundamentals of Digital Archeology
+              </td>
+              <td>A
+              </td>
+            </tr>
+            <tr>
+              <td>COSC 360
+              </td>
+              <td>Systems Programming
+              </td>
+              <td>A
+              </td>
+            </tr>
+          </table>
+          <br/>
+          <table>
+            <tr>
+              <th colspan="3">Spring 2021
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <strong>Course Number
+                </strong>
+              </td>
+              <td>
+                <strong>Course Name
+                </strong>
+              </td>
+              <td>
+                <strong>Grade
+                </strong>
+              </td>
+            </tr>
+            <tr>
+              <td>COSC 311
+              </td>
+              <td>Discrete Structures
+              </td>
+              <td>A
+              </td>
+            </tr>
+            <tr>
+              <td>MATH 323
+              </td>
+              <td>Probability and Statistics
+              </td>
+              <td>A
+              </td>
+            </tr>
+            <tr>
+              <td>GEOG 101
+              </td>
+              <td>World Geography
+              </td>
+              <td>A
+              </td>
+            </tr>
+            <tr>
+              <td>COSC 302
+              </td>
+              <td>Data Structures and Algorithms II
+              </td>
+              <td>A
+              </td>
+            </tr>
+          </table>
+          <h3>Pellissippi State Community College
+          </h3>
+          <h4>
+            <em>(Summa Cum Laude, A.A.)
+            </em>
+          </h4>
+          <div class="paragraph-and-image">
+            <p>Relevant C.S.-related courses completed, up to Fall 2020:
+              <img src="https://i.imgur.com/ya1dVd0.jpg" alt="Outstanding Graduate Award 2018"/>
+            <ul>
+              <li>Assembly & Computer Organization
+              </li>
+              <li>Calculus I and II
+              </li>
+              <li>Data Structures and Algorithms I
+              </li>
+              <li>Engineering Fundamentals I and II
+              </li>
+              <li>Intro to Computer Science
+              </li>
+              <li>Linear Algebra
+              </li>
+            </ul>
+            <p>Miscellaneous:
+            </p>
+            <ul>
+              <li>Biology I and II
+              </li>
+              <li>Intermediate French I and II
+              </li>
+              <li>Introduction to Web Design
+              </li>
+            </ul>
+            </p>
         </div>
-        <div id="experience">
-          <h1>Experience</h1>
-        </div>
+        <p>
+          <strong>
+            <em>Awarded the Outstanding Graduate Award
+            </em>
+          </strong>
+        </p>
+        <h3>Co-curricular Self-Learning
+        </h3>
+        <h4>Lynda
+        </h4>
+        <ul>
+          <li>Building and Deploying a Full-Stack React Application (by Carl Peaslee)
+          </li>
+          <li>Building a Web Interface with React.js (by Ray Villalobos)
+          </li>
+          <li>Learning ECMAScript 6 (by Eve Porcello)
+          </li>
+          <li>Learning React.js (by Eve Porcello)
+          </li>
+          <li>Node.js Essential Training (by Alex Banks)
+          </li>
+          <li>React.js Essential Training (by Eve Porcello)
+          </li>
+        </ul>
+        <h4>Udemy
+        </h4>
+        <ul>
+          <li>JavaScript: Understanding the Weird Parts (by Anthony Alicea)
+          </li>
+          <li>ES6 Javascript: The Complete Developer's Guide (by Stephen Grider)
+          </li>
+          <li>Projects in Node.js - Learn by Example (by Patrick Schroeder)
+          </li>
+          <li>React for visual learners (by Hendrik Swanepoel)
+          </li>
+          <li>The Complete React Web App Developer Course (by Andrew Mead)
+          </li>
+          <li>Modern React with Redux (by Stephen Grider)
+          </li>
+          <li>Advanced React and Redux (by Stephen Grider)
+          </li>
+          <li>GraphQL with React: The Complete Developers Guide (by Stephen Grider)
+          </li>
+          <li>The Complete React Native + Hooks Course (by Stephen Grider)
+          </li>
+          <li>React Native: Advanced Concepts (by Stephen Grider)
+          </li>
+          <li>Ethereum and Solidity: The Complete Developer's Guide (by Stephen Grider)
+          </li>
+          <li>Learn Redis from Scratch(by Eduonix Learning Solutions)
+          </li>
+        </ul>
+        <h4>SoloLearn
+        </h4>
+        <ul>
+          <li>C
+          </li>
+          <li>C++
+          </li>
+          <li>C#
+          </li>
+          <li>Intermediate Python
+          </li>
+          <li>JavaScript
+          </li>
+          <li>Python Core
+          </li>
+          <li>Python Data Structures
+          </li>
+          <li>React + Redux
+          </li>
+          <li>SQL
+          </li>
+          <li>Swift 4
+          </li>
+        </ul>
+        <h4>Other Resources and Books
+        </h4>
+        <ul>
+          <li>Cracking The Coding Interview (by Gayle Laakmann McDowell)
+          </li>
+          <li>Linux man-pages (by Michael Kerrisk)
+          </li>
+          <li>MATLAB Onramp (Renee Bach)
+          </li>
+          <li>The C Programming Language (by Kernighan and Ritchie)
+          </li>
+        </ul>
+      </div>
+      <hr/>
+      <div id="experience">
+        <h1>Experience
+        </h1>
+        <p>As of Spring 2023, I am working as an undergraduate research assistant at the University of Tennessee, Knoxville.
+        </p>
+      </div>
+      <hr/>
+      <div id="showcase">
+        <h1>Showcase
+        </h1>
+        <ul>
+          <li>COSC 401/402 Senior Design (Neuromorphic Racing) (Spring 2022) (In-progress)
+          </li>
+          <li>
+            <a href="https://github.com/WillNJohnson/WeatherApp">COSC 340 WeatherApp
+            </a> (PyQT) (Fall 2021)
+          </li>
+          <li>COSC 360 Jchat (C) (Fall 2021) 
+            <span style="color: red">*
+            </span>
+          </li>
+          <li>COSC 302 Mazemake, Makesolve, Mazeimage (C++) (Spring 2021) 
+            <span style="color: red">*
+            </span>
+          </li>
+        </ul>
+        <p>
+          <em>
+            <span style="color: red">*
+            </span> Not linked, in accordance to standard academic policy, but feel free to reach out to me if you're interested in seeing them.
+          </em>
+        </p>
       </div>
     </div>
-    <script>
-      // Hide navbar when scrolling down, but display when scrolling up
-      let scroll_pos_last = window.pageYOffset;
-      let scroll_start = document.querySelector(".back-to-top");
-      
-      // Apply smooth scroll to top of page
-      scroll_start.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-      
-      // Scroll behavior on navbar and back-to-top
-      window.onscroll = () => {
-        var scroll_pos_current = window.pageYOffset;
-        if (scroll_pos_last > scroll_pos_current) {
-          document.querySelector(".navbar").style.visibility = "visible";
-          document.querySelector(".back-to-top").style.visibility = "hidden";
-          document.querySelector(".navbar").style.opacity = "1";
-          document.querySelector(".back-to-top").style.opacity = "0";
-          
-          scroll_start.classList.remove("fade-out");
-          scroll_start.classList.add("fade-in");
-        } else {
-          document.querySelector(".navbar").style.visibility = "hidden";
-          document.querySelector(".back-to-top").style.visibility = "visible";
-          document.querySelector(".navbar").style.opacity = "0";
-          document.querySelector(".back-to-top").style.opacity = "1";
-          
-          scroll_start.classList.remove("fade-in");
-          scroll_start.classList.add("fade-out");
-        }
-        scroll_pos_last = scroll_pos_current;
+    </div>
+  <script>
+    // Hide navbar when scrolling down, but display when scrolling up
+    let scroll_pos_last = window.pageYOffset;
+    const scroll_start = document.querySelector(".back-to-top");
+    // Apply smooth scroll to top of page
+    scroll_start.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0, behavior: 'smooth' }
+                     );
+    }
+                                 );
+    // Scroll behavior on navbar and back-to-top
+    window.onscroll = () => {
+      let scroll_pos_current = window.pageYOffset;
+      if (scroll_pos_last > scroll_pos_current) {
+        document.querySelector(".navbar").style.visibility = "visible";
+        document.querySelector(".back-to-top").style.visibility = "hidden";
+        document.querySelector(".navbar").style.opacity = "1";
+        document.querySelector(".back-to-top").style.opacity = "0";
+        scroll_start.classList.remove("fade-out");
+        scroll_start.classList.add("fade-in");
       }
-    </script>
+      else {
+        document.querySelector(".navbar").style.visibility = "hidden";
+        document.querySelector(".back-to-top").style.visibility = "visible";
+        document.querySelector(".navbar").style.opacity = "0";
+        document.querySelector(".back-to-top").style.opacity = "1";
+        scroll_start.classList.remove("fade-in");
+        scroll_start.classList.add("fade-out");
+      }
+      scroll_pos_last = scroll_pos_current;
+    }
+  </script>
   </body>
 </html>
